@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Fire DPI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Free Fire DPI Calculator</h1>
+            <p>Tính toán eDPI (Effective DPI) cho Free Fire</p>
+        </div>
+
+        <div class="calculator-box">
+            <div class="input-group">
+                <label for="dpi">DPI Chuột:</label>
+                <input 
+                    type="number" 
+                    id="dpi" 
+                    placeholder="Nhập DPI (ví dụ: 800)" 
+                    value="800"
+                    min="1"
+                    max="16000"
+                >
+                <small>Mặc định: 800 DPI</small>
+            </div>
+
+            <div class="input-group">
+                <label for="sensitivity">Độ Nhạy In-Game (%):</label>
+                <input 
+                    type="number" 
+                    id="sensitivity" 
+                    placeholder="Nhập độ nhạy (0-100)" 
+                    value="50"
+                    min="0"
+                    max="100"
+                    step="1"
+                >
+                <small>Mặc định: 50% (Trung bình)</small>
+            </div>
+
+            <button class="btn-calculate" onclick="calculateDPI()">Tính Toán eDPI</button>
+        </div>
+
+        <div class="result-box" id="resultBox" style="display: none;">
+            <h2>📊 Kết Quả</h2>
+            <div class="result-item">
+                <span class="label">DPI Chuột:</span>
+                <span class="value" id="resultDPI">-</span>
+            </div>
+            <div class="result-item">
+                <span class="label">Độ Nhạy In-Game:</span>
+                <span class="value" id="resultSensitivity">-</span>
+            </div>
+            <div class="result-item highlight">
+                <span class="label">eDPI (Effective DPI):</span>
+                <span class="value" id="resultEDPI">-</span>
+            </div>
+            <div class="info-box">
+                <p><strong>eDPI</strong> = DPI × Độ Nhạy / 100</p>
+            </div>
+        </div>
+
+        <div class="presets-box">
+            <h3>⚡ Cài Đặt Nhanh</h3>
+            <div class="preset-buttons">
+                <button onclick="setPreset(800, 30)">🎯 Aim (30%)</button>
+                <button onclick="setPreset(800, 50)">⚖️ Balance (50%)</button>
+                <button onclick="setPreset(800, 75)">🔥 Fast (75%)</button>
+                <button onclick="setPreset(1600, 50)">⚡ High DPI</button>
+            </div>
+        </div>
+
+        <div class="tips-box">
+            <h3>💡 Mẹo Sử Dụng</h3>
+            <ul>
+                <li>eDPI 400-600: Phù hợp với aim tỉnh xảo (Sniper, Marksman)</li>
+                <li>eDPI 600-1200: Cân bằng tốt giữa aim và recoil control</li>
+                <li>eDPI 1200+: Phù hợp với chơi close range và aggressive</li>
+                <li>Thay đổi dần thay vì thay đổi đột ngột để thích nghi</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Made with ❤️ for Free Fire Players</p>
+            <p>Hỗ trợ: <a href="https://github.com/xuanhung2011tt-oss/dpixhung_" target="_blank">dpixhung_</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
